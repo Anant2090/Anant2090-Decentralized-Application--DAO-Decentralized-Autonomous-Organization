@@ -31,38 +31,38 @@ The DAO smart contract is written in Solidity and implements the following featu
 # solidity Functions
 
    
-## 1 Redeem Shares: Investors can redeem their shares.
+### 1 Redeem Shares: Investors can redeem their shares.
 
 function redeemShare(uint amount) public { ... }
 
 Transfer Shares: Investors can transfer shares to other addresses.
 
 
-## 2 function transferShare(uint amount, address to) public { ... }
+### 2 function transferShare(uint amount, address to) public { ... }
 
 Create Proposal: The manager can create proposals for fund allocation.
 
 
-## 3 function createProposal(string calldata description, uint amount, address payable recipient) public { ... }
+### 3 function createProposal(string calldata description, uint amount, address payable recipient) public { ... }
 
 Vote on Proposal: Investors can vote on proposals during the voting period.
 
 
-## 4 function voteProposal(uint proposalId) public { ... }
+### 4 function voteProposal(uint proposalId) public { ... }
 
 Execute Proposal: The manager can execute approved proposals.
 
 
-## 5 function executeProposal(uint proposalId) public { ... }
+### 5 function executeProposal(uint proposalId) public { ... }
 
 View Proposal List: Retrieve a list of all proposals.
 
 
-## 6 function ProposalList() public view returns (Proposal[] memory) { ... }
+### 6 function ProposalList() public view returns (Proposal[] memory) { ... }
 
 View Investor List: Retrieve a list of all investors.
 
-## 7 function InvestorList() public view returns (address[] memory) { ... }
+### 7 function InvestorList() public view returns (address[] memory) { ... }
 
 # Contributing
 Contributions to this project are welcome. If you would like to contribute, please follow the contribution guidelines.
