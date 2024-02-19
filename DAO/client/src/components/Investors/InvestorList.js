@@ -1,27 +1,39 @@
-import {useState,useEffect} from "react"
-function InvestorList({state}){
-   
-   const [list,setlist]=useState([]);
-   useEffect(()=>{
-      const {contract}=state;
-      async function getInvestors()
-   {
-      
-      const investors=await contract.methods.InvestorList().call();
-      console.log(investors);
-      setlist(investors);
+// InvestorList.js
+import { useState, useEffect } from "react";
 
-   } 
-      contract&&getInvestors();
-   },[state]);
-   return<>
-    <div className="list">
-    <h3>Investor's List</h3>
-    {list.map((investorAddress)=>{
-        return <div key={investorAddress}>{investorAddress}</div>
-    })}
-   
-    </div>
-   </>
-  }
-  export default InvestorList;
+function InvestorList({ state }) {
+  const [investors, setInvestors] = useState([]);
+  const { contract } = state;
+
+  useEffect(() => {
+    async function getInvestors() {
+      try {
+        const arrayInvestors = await contract.methods.getInvestorsList().call();
+        console.log("Investors from contract:", arrayInvestors);
+        setInvestors(arrayInvestors);
+      } catch (error) {
+        console.error("Error fetching investors:", error);
+      }
+    }
+
+    contract && getInvestors();
+  }, [contract]);
+
+  return (
+    <>
+      <div className="list-investor">
+        {investors.length > 0 ? (
+          investors.map((each, index) => (
+            <div className="prop" key={index}>
+              <p>ID: {each}</p>
+            </div>
+          ))
+        ) : (
+          <p>No investors found.</p>
+        )}
+      </div>
+    </>
+  );
+}
+
+export default InvestorList;

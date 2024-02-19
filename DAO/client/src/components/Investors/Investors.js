@@ -10,8 +10,7 @@ function Investors({state,account}) {
     <TransferShare state={state} account={account}></TransferShare>
     <ReedemShare state={state} account={account}></ReedemShare>
     <VoteProposal state={state} account={account}></VoteProposal>
-    <InvestorList state={state}></InvestorList>
-    <ProposalList state={state}></ProposalList>
+    
     </>
  
 

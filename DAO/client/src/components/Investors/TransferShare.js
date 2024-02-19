@@ -16,17 +16,26 @@ function TransferShare({state,account}){
         }
 
     }
-    return<><form onSubmit={transferShare}>
+    return<>
+    <div className="contri">
+    <h3 className="ll">Transfer Share</h3>
+    <form onSubmit={transferShare}>
     <label className="label1" htmlFor="amount">
     <span className="font">Amount:</span>
         </label>
+        <br />
     <input type="text" id="amount"></input>
+    <br />
     <label className="label1" htmlFor="to">
     <span className="font">Address:</span>
         </label>
+        <br />
+        
     <input type="text" id="to"></input>
-    
+    <br />
     <button className="button" type="submit">Transfer Share</button>
-    </form><br></br></>
+    </form><br></br>
+    </div>
+    </>
    }
    export default TransferShare;

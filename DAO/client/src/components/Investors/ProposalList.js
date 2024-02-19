@@ -1,3 +1,4 @@
+// ProposalList.js
 import { useState, useEffect } from "react";
 
 function ProposalList({ state }) {
@@ -7,12 +8,17 @@ function ProposalList({ state }) {
     const { contract } = state;
 
     async function getProposals() {
-      const arrayProposals = await contract.methods.ProposalList().call();
-      setProposals(arrayProposals);
+      try {
+        const arrayProposals = await contract.methods.ProposalList().call();
+        setProposals(arrayProposals);
+      } catch (error) {
+        console.error("Error fetching proposals:", error);
+      }
     }
 
+    // Updated dependency array to include state.contract
     contract && getProposals();
-  }, [state,proposals]);
+  }, [state.contract]);
 
   return (
     <>
@@ -22,6 +28,7 @@ function ProposalList({ state }) {
           <div className="prop" key={each.id}>
             <p>ID: {each.id}</p>
             <p>Description: {each.description}</p>
+            <p>Ammount:{each.amount}</p>
           </div>
         ))}
       </div>

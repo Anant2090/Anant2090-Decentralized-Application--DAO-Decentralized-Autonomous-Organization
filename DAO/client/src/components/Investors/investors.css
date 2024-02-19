@@ -46,9 +46,13 @@ input[type=text] {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   width: 40%;
   margin:12px auto;
-
+  cursor: pointer;
+  background: linear-gradient(to right top,rgb(141, 128, 128),rgb(230, 252, 143));
+ height: auto;
   padding:2px;
 }
+
+
 
 p{
   color: white;
@@ -71,3 +75,29 @@ td{
   border: 2px solid black;
   margin-bottom:10px;
 }
+
+.contri
+{
+  border: 2px solid rgb(231, 226, 226);
+  border-radius: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 5px;
+  padding-bottom: 20px;
+  
+  
+
+}
+.ll
+{
+  font-size: 20px;
+  font-weight: 600;
+}
+#weiValue{
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  height: 2.3vw;
+}
+

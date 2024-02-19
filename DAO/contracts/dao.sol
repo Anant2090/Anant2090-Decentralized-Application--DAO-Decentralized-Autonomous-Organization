@@ -53,20 +53,17 @@ isInvestor[msg.sender]=true;
 numOfshares[msg.sender]=numOfshares[msg.sender]+msg.value;
 totalShares+=msg.value; //totaltShares=totalShares+msg.value
 availableFunds+=msg.value;
-
-bool isinves=false;
-for (uint i = 0; i < investorsList.length; i++) {
-        if (investorsList[i] == msg.sender) {
-          isinves=true;
-            break;
-        }
-    }
-    if (!isinves) {
-        investorsList.push(msg.sender);
-    }
-
-
-
+investorsList.push(msg.sender);
+// bool isinves=false;
+// for (uint i = 0; i < investorsList.length; i++) {
+//     if (investorsList[i] == msg.sender) {
+//         isinves=true;
+//         break;
+//     }
+// }
+// if (isinves==false) {
+//     investorsList.push(msg.sender);
+// }
 }
 
 function reedemShare(uint amount) public onlyInvestor(){
@@ -136,8 +133,9 @@ arr[i]=proposals[i];
 }
 return arr;
 }
-function InvestorList() public view returns(address[] memory){
-  return investorsList;
+function getInvestorsList() public view returns (address[] memory) {
+    return investorsList;
 }
+
 }
 
