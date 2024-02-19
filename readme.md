@@ -64,8 +64,5 @@ View Investor List: Retrieve a list of all investors.
 
 ### 7 function InvestorList() public view returns (address[] memory) { ... }
 
-# Contributing
-Contributions to this project are welcome. If you would like to contribute, please follow the contribution guidelines.
-
 # License
 This project is licensed under the GPL-3.0 License.
